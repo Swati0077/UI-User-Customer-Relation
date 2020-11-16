@@ -1,0 +1,23 @@
+label{
+    font-weight: bold;
+    font-size: large;
+}
+#div1
+{
+    background-color: gainsboro;
+}
+.container{
+    height: 100vh;
+    width: 100vw;
+    background-color: whitesmoke;
+}
+
+.row , #heading{
+    display:flex;
+    align-items: center;
+    justify-content: center; 
+}
+h2{
+    background-color:gainsboro;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

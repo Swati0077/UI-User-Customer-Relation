@@ -1,0 +1,36 @@
+
+        <table class="table table-bordered table-responsive-md table-striped text-center" id="users">
+          <tr>
+          <th class="text-center">FirstName</th>
+          <th class="text-center">MiddleName</th>
+          <th class="text-center">LastName</th>
+          <th class="text-center">Email</th>
+          <th class="text-center">PhoneNumber</th>
+          <th class="text-center">Role</th>
+          <th class="text-center">CID</th>    
+          <th class="text-center">Address</th>
+          <th class="text-center">Edit</th>
+          </tr>
+          <tr *ngFor="let user of users; let i=index;" class="hover-highlight">
+            <td>{{user.firstName}}</td>
+            <td>{{user.middleName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phoneNumber}}</td>
+            <td>{{user.role}}</td>
+            <td>{{user.customerId}}</td>
+            <td>{{user.Address}}</td>
+            <td><button class="btn btn-primary" [routerLink]="['/user/edit', user.id]">EDIT</button> |
+              <button class="btn btn-danger" id="delete-user" (click)="onDeleteUser(user.id)">DELETE</button>
+            </td>
+        </tr>
+    </table>
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <button class="btn btn-primary" id="fetch-user" (click)="onFetchUsers()">
+          FETCH USERS
+        </button> &nbsp; | &nbsp;<button class="btn btn-primary" id="add-user" (click)="onAddUser()">
+          ADD USERS
+        </button>
+      </div>
+    </div>

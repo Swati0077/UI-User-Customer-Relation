@@ -1,0 +1,45 @@
+<div>
+  <p *ngIf="customer.length < 1">No Customers to Show</p>
+  <table class="table table-bordered table-responsive-md table-striped text-center" *ngIf="customer.length >= 1" id="customers">
+    <tr>
+    <th class="text-center">Name</th>
+    <th class="text-center">Website</th>
+    <th class="text-center">Address</th>
+    <th></th>
+    </tr>
+    <tr *ngFor="let customerdata of customer; let i=index ;" class="hover-highlight">
+      <td>{{customerdata.name}}</td>
+      <td>{{customerdata.website}}</td>
+      <td>{{customerdata.address}}</td>
+      <td><button class="btn btn-primary" [routerLink]="['/users', customerdata.id]">SHOW USERS</button> | <button
+        class="btn btn-danger" (click)="onDeleteCustomer(customerdata.id)"
+      >
+      Delete Customer
+      </button> | <button
+      class="btn btn-primary" [routerLink]="['/customer/edit', customerdata.id]">
+    Edit Customer
+    </button> </td>
+  </tr>
+</table>
+<div class="row">
+  <div class="col-xs-12 col-md-6 col-md-offset-3"  >
+    <button class="btn btn-primary" style="float: right;" id="add-customer" (click)="onAddCustomer()">
+      ADD CUSTOMER
+    </button> 
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
